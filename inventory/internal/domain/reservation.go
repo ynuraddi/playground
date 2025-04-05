@@ -1,6 +1,9 @@
 package domain
 
-import "github.com/stackus/errors"
+import (
+	"github.com/stackus/errors"
+	"github.com/ynuraddi/playground/ddd"
+)
 
 var (
 	ErrReservationStatusNotAllowed = errors.Wrap(errors.ErrBadRequest, "reservation status is not allowed")
@@ -43,6 +46,8 @@ func NewReservation(id string, quantity int64, products ...Product) (Reservation
 		Id:       id,
 		Products: products,
 	}
+
+	var _ ddd.Event
 
 	for _, p := range products {
 		if err := p.SubQuantity(quantity); err != nil {
