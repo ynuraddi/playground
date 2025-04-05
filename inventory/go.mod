@@ -1,4 +1,4 @@
-module inventory
+module github.com/ynuraddi/playground/inventory
 
 go 1.23.1
 

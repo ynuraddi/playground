@@ -1,6 +1,6 @@
 package command
 
-import "inventory/internal/domain"
+import "github.com/ynuraddi/playground/inventory/internal/domain"
 
 type (
 	CreateProduct struct {
